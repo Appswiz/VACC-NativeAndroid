@@ -1,0 +1,2660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout12"
+        android:background="#ffff5a00">
+        <ImageView
+            android:src="@mipmap/icon"
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_90"
+            android:id="@+id/VACCBanner"
+            android:scaleType="fitXY" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/hourCounterView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal">
+            <TextView
+                android:textColor="@color/white"
+                android:text="HOURS LOGGED:"
+                android:textSize="@dimen/dp_17"
+                android:id="@+id/hoursRemainingDescription"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold" />
+            <TextView
+                android:textColor="@color/white"
+                android:text="0 of 38"
+               android:textSize="@dimen/dp_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hoursRemainingText"
+                android:gravity="center" />
+        </LinearLayout>
+        <Button
+            android:text="Clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clearButton"
+            android:layout_gravity="center" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_3"
+        android:background="@color/divider_blue"
+        android:orientation="horizontal" />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/breadcrumbView"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:scrollbars="horizontal">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/breadcrumbGroup"
+            android:orientation="horizontal">
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_12"
+                android:text="STARTING DATE "
+                android:id="@+id/questionButton1" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="@dimen/dp_12"
+                android:text="TYPE OF HOURS "
+                android:id="@+id/questionButton2" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="@dimen/dp_12"
+                android:text="WORK HOURS "
+                android:id="@+id/questionButton3" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="OVERTIME "
+                android:textSize="@dimen/dp_12"
+                android:id="@+id/questionButton4" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="RTO "
+                android:textSize="@dimen/dp_12"
+                android:id="@+id/questionButton5" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="@dimen/dp_12"
+                android:text="SICK "
+                android:id="@+id/questionButton6" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_12"
+                android:checked="true"
+                android:text="ANNUAL "
+                android:id="@+id/questionButton7" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="@dimen/dp_12"
+                android:text="BEREAVEMENT "
+                android:id="@+id/questionButton8" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="@dimen/dp_12"
+                android:text="VACC"
+                android:id="@+id/questionButton9" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:text="NOTES "
+                android:textSize="@dimen/dp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/questionButton10" />
+            <RadioButton
+                android:textColor="#ff000000"
+                android:textSize="@dimen/dp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="SUMMARY "
+                android:id="@+id/summaryButton" />
+        </RadioGroup>
+    </HorizontalScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_3"
+        android:background="@color/divider_blue"
+        android:orientation="horizontal" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/questionScroller"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/questionContainer"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/question1Container"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout2">
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:text="Select the starting Monday:" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/startingWeekInfo"
+                        android:layout_gravity="right"
+                        android:scaleType="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout14"
+                    android:gravity="center">
+                    <ImageButton
+                        android:src="@mipmap/leftarrow"
+                        android:id="@+id/prevMonday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:text="01/01/2013"
+                        android:textSize="@dimen/dp_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/startingMondayText"
+                        android:gravity="center" />
+                    <ImageButton
+                        android:src="@mipmap/rightarrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/nextMonday" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionButtons">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question2Container"
+                android:visibility="gone">
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout2"
+                    android:layout_marginBottom="@dimen/dp_25">
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:text="What did you do this week? (Select one)" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hoursTypeInfo"
+                        android:layout_gravity="right"
+                        android:scaleType="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:id="@+id/linearLayout7"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_15">
+                    <TextView
+                        android:text="38 hours in the work place"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView23"
+                        android:textColor="#ff000000"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:textColor="#ff000000"
+                        android:id="@+id/workPlaceHoursType"
+                        android:gravity="center"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:id="@+id/linearLayout7"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_15">
+                    <TextView
+                        android:text="38 hours\nRTO Training"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView23"
+                        android:textColor="#ff000000"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:textColor="#ff000000"
+                        android:id="@+id/TAFEHoursType"
+                        android:gravity="center"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:id="@+id/linearLayout7"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_30">
+                    <TextView
+                        android:text="A mixture of hours\n(work/RTO/leave)"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView23"
+                        android:textColor="#ff000000"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:textColor="#ff000000"
+                        android:id="@+id/mixedHoursType"
+                        android:gravity="center"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionButtons">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question3Container"
+                android:visibility="gone">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <LinearLayout
+                    android:orientation="vertical"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/workHoursExpanded"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout3"
+                        android:layout_gravity="right"
+                        android:layout_weight="1">
+                        <TextView
+                            android:textColor="#ff000000"
+                            android:text="How long were you at the workplace? (Not including overtime)"
+                            android:textSize="@dimen/dp_17"
+                            android:id="@+id/textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                        <ImageView
+                            android:layout_margin="@dimen/dp_4"
+                            android:src="@android:drawable/ic_dialog_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/workHoursInfo" />
+                    </LinearLayout>
+                    <TableLayout
+                        
+                        android:id="@+id/tableLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1"
+                            android:gravity="center">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Days"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView19"
+                                android:layout_margin="@dimen/dp_5"
+                                android:gravity="center" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/workDays"
+                                android:hint="0"
+                                android:gravity="center"
+                                android:width="@dimen/dp_75" />
+                        </TableRow>
+                    </TableLayout>
+                    <TextView
+                        android:text="OR"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView24"
+                        android:gravity="center"
+                        android:textColor="@android:color/black" />
+                    <TableLayout
+                        
+                        android:id="@+id/tableLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Hours"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView20"
+                                android:layout_margin="@dimen/dp_5"
+                                android:layout_column="0"
+                                android:gravity="center" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Minutes"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView21"
+                                android:layout_margin="@dimen/dp_5"
+                                android:gravity="center" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/workHours"
+                                android:hint="0"
+                                android:layout_column="0"
+                                android:gravity="center"
+                                android:width="@dimen/dp_75" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/workMinutes"
+                                android:hint="0"
+                                android:gravity="center"
+                                android:width="@dimen/dp_75" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionButtons">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question4Container"
+                android:visibility="gone"
+                android:tag="overtime_hours">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout16"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+                    <TextView
+                        android:text="Did you work overtime this week?"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView28"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:text="Yes   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/overtimeCheckbox"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/overtimeInfo"
+                         />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/overTimeLayout"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout17"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="Please enter the overtime spent on each day:"
+                            android:textSize="@dimen/dp_17"
+                            android:id="@+id/textView28"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout15" />
+                    <TableLayout
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout1"
+                        android:layout_marginBottom="@dimen/dp_10">
+                        <TableRow
+                            
+                            android:id="@+id/tableRowHeader">
+                            <TextView
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView25"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <TextView
+                                android:text="HOURS"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView26"
+                                android:textColor="@android:color/black"
+                                android:gravity="right"
+                                android:layout_gravity="right"
+                                android:layout_weight="1" />
+                            <TextView
+                                android:text="MINUTES"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView27"
+                                android:textColor="@android:color/black"
+                                android:layout_weight="1"
+                                android:layout_gravity="right"
+                                android:gravity="right" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:text="Monday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <TextView
+                                android:text="Tuesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow3">
+                            <TextView
+                                android:text="Wednesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow4">
+                            <TextView
+                                android:text="Thursday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow5">
+                            <TextView
+                                android:text="Friday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow6">
+                            <TextView
+                                android:text="Saturday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow7">
+                            <TextView
+                                android:text="Sunday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayOvertimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayOvertimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:id="@+id/questionButtons"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question5Container"
+                android:visibility="gone"
+                android:tag="tafe_hours">
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout4">
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:text="How long were you at your RTO this week? "
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:id="@+id/TAFEHoursInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <LinearLayout
+                    android:orientation="vertical"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tafeHoursExpanded"
+                    android:gravity="center">
+                    <TableLayout
+                        
+                        android:id="@+id/tableLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Days"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView19"
+                                android:layout_margin="@dimen/dp_5"
+                                android:gravity="center" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tafeDays"
+                                android:hint="0"
+                                android:gravity="center"
+                                android:width="@dimen/dp_75" />
+                        </TableRow>
+                    </TableLayout>
+                    <TextView
+                        android:text="OR"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView24"
+                        android:gravity="center"
+                        android:textColor="@android:color/black" />
+                    <TableLayout
+                        
+                        android:id="@+id/tableLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Hours"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView20"
+                                android:layout_margin="@dimen/dp_5"
+                                android:layout_column="0"
+                                android:gravity="center" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Minutes"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView21"
+                                android:layout_margin="@dimen/dp_5"
+                                android:gravity="center" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tafeHours"
+                                android:hint="0"
+                                android:layout_column="0"
+                                android:gravity="center"
+                                android:width="@dimen/dp_75" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tafeMinutes"
+                                android:hint="0"
+                                android:gravity="center"
+                                android:width="@dimen/dp_75" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionButtons">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question6Container"
+                android:visibility="gone"
+                android:clipChildren="false"
+                android:tag="sick_leave_hours">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout16"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+                    <TextView
+                        android:text="Did you take any sick leave this week?"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView28"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:text="Yes   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sickLeaveCheckbox"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sickLeaveInfo"
+                         />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+
+                    android:id="@+id/sickLeaveLayout"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout17"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="Please enter the sick leave time on each day:"
+                            android:textSize="@dimen/dp_17"
+                            android:id="@+id/textView28"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout15" />
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout1"
+                        android:layout_marginBottom="@dimen/dp_10">
+                        <TextView
+                            android:text="NOTE: 1 day = 7 hours, 36 minutes or 7.6 hours"
+                            android:textSize="@dimen/dp_12"
+                            android:id="@+id/textViewOvertimeNote"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"
+                            android:gravity="right" />
+                        <TableRow
+                            android:id="@+id/tableRowHeader">
+                            <TextView
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView25"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <TextView
+                                android:text="HOURS"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView26"
+                                android:textColor="@android:color/black"
+                                android:gravity="right"
+                                android:layout_gravity="right"
+                                android:layout_weight="1" />
+                            <TextView
+                                android:text="MINUTES"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView27"
+                                android:textColor="@android:color/black"
+                                android:layout_weight="1"
+                                android:layout_gravity="right"
+                                android:gravity="right" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:text="Monday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow2">
+                            <TextView
+                                android:text="Tuesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow3">
+                            <TextView
+                                android:text="Wednesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow4">
+                            <TextView
+                                android:text="Thursday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow5">
+                            <TextView
+                                android:text="Friday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow6">
+                            <TextView
+                                android:text="Saturday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow7">
+                            <TextView
+                                android:text="Sunday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundaySickLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundaySickLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:id="@+id/questionButtons"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question7Container"
+                android:visibility="gone"
+                android:clipChildren="false"
+                android:tag="sick_leave_hours">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout16"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+                    <TextView
+                        android:text="Did you take any annual leave this week?"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView28"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:text="Yes   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/annualLeaveCheckbox"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/annualLeaveInfo" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+
+                    android:id="@+id/annualLeaveLayout"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout17"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="Please enter the annual leave time on each day:"
+                            android:textSize="@dimen/dp_17"
+                            android:id="@+id/textView28"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout15" />
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout1"
+                        android:layout_marginBottom="@dimen/dp_10">
+                        <TextView
+                            android:text="NOTE: 1 day = 7 hours, 36 minutes or 7.6 hours"
+                            android:textSize="@dimen/dp_12"
+                            android:id="@+id/textViewOvertimeNote"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"
+                            android:gravity="right" />
+                        <TableRow
+                            
+                            android:id="@+id/tableRowHeader">
+                            <TextView
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView25"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <TextView
+                                android:text="HOURS"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView26"
+                                android:textColor="@android:color/black"
+                                android:gravity="right"
+                                android:layout_gravity="right"
+                                android:layout_weight="1" />
+                            <TextView
+                                android:text="MINUTES"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView27"
+                                android:textColor="@android:color/black"
+                                android:layout_weight="1"
+                                android:layout_gravity="right"
+                                android:gravity="right" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:text="Monday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <TextView
+                                android:text="Tuesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow3">
+                            <TextView
+                                android:text="Wednesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow4">
+                            <TextView
+                                android:text="Thursday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow5">
+                            <TextView
+                                android:text="Friday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow6">
+                            <TextView
+                                android:text="Saturday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow7">
+                            <TextView
+                                android:text="Sunday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayAnnualLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayAnnualLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:id="@+id/questionButtons"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question8Container"
+                android:visibility="gone"
+                android:clipChildren="false"
+                android:tag="sick_leave_hours">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout16"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+                    <TextView
+                        android:text="Did you take any bereavement leave this week?"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView28"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:text="Yes   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/bereavementLeaveCheckbox"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/bereavementLeaveInfo"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+
+                    android:id="@+id/bereavementLeaveLayout"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout17"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="Please enter the bereavement leave time on each day:"
+                            android:textSize="@dimen/dp_17"
+                            android:id="@+id/textView28"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout15" />
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout1"
+                        android:layout_marginBottom="@dimen/dp_10">
+                        <TextView
+                            android:text="NOTE: 1 day = 7 hours, 36 minutes or 7.6 hours"
+                            android:textSize="@dimen/dp_12"
+                            android:id="@+id/textViewOvertimeNote"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"
+                            android:gravity="right" />
+                        <TableRow
+                            
+                            android:id="@+id/tableRowHeader">
+                            <TextView
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView25"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <TextView
+                                android:text="HOURS"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView26"
+                                android:textColor="@android:color/black"
+                                android:gravity="right"
+                                android:layout_gravity="right"
+                                android:layout_weight="1" />
+                            <TextView
+                                android:text="MINUTES"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView27"
+                                android:textColor="@android:color/black"
+                                android:layout_weight="1"
+                                android:layout_gravity="right"
+                                android:gravity="right" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:text="Monday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <TextView
+                                android:text="Tuesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow3">
+                            <TextView
+                                android:text="Wednesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow4">
+                            <TextView
+                                android:text="Thursday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow5">
+                            <TextView
+                                android:text="Friday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow6">
+                            <TextView
+                                android:text="Saturday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow7">
+                            <TextView
+                                android:text="Sunday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayBereavementLeaveHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayBereavementLeaveMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:id="@+id/questionButtons"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question9Container"
+                android:visibility="gone"
+                android:clipChildren="false"
+                android:tag="bereavement_leave_hours">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout16"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+                    <TextView
+                        android:text="Are you submitting time as VACC duties this week?"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView28"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:text="Yes   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/vaccTimeCheckbox"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/vaccTimeInfo" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+
+                    android:id="@+id/vaccTimeLayout"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout17"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="Enter the hours and minutes of VACC duties taken per day of the week:"
+                            android:textSize="@dimen/dp_17"
+                            android:id="@+id/textView28"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout15" />
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout1"
+                        android:layout_marginBottom="@dimen/dp_10">
+                        <TextView
+                            android:text="NOTE: 1 day = 7 hours, 36 minutes or 7.6 hours"
+                            android:textSize="@dimen/dp_12"
+                            android:id="@+id/textViewOvertimeNote"
+                            android:textColor="@android:color/black"
+                            android:textStyle="italic"
+                            android:gravity="right" />
+                        <TableRow
+                            
+                            android:id="@+id/tableRowHeader">
+                            <TextView
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView25"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <TextView
+                                android:text="HOURS"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView26"
+                                android:textColor="@android:color/black"
+                                android:gravity="right"
+                                android:layout_gravity="right"
+                                android:layout_weight="1" />
+                            <TextView
+                                android:text="MINUTES"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView27"
+                                android:textColor="@android:color/black"
+                                android:layout_weight="1"
+                                android:layout_gravity="right"
+                                android:gravity="right" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:text="Monday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/mondayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow2">
+                            <TextView
+                                android:text="Tuesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/tuesdayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow3">
+                            <TextView
+                                android:text="Wednesday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/wednesdayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow4">
+                            <TextView
+                                android:text="Thursday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/thursdayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow5">
+                            <TextView
+                                android:text="Friday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/fridayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow6">
+                            <TextView
+                                android:text="Saturday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/saturdayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tableRow7">
+                            <TextView
+                                android:text="Sunday:"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView7"
+                                android:textColor="@android:color/black"
+                                android:gravity="right" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayVACCTimeHoursText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                            <EditText
+                                android:inputType="numberDecimal"
+                                android:id="@+id/sundayVACCTimeMinutesText"
+                                android:hint="0"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:width="@dimen/dp_50" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:id="@+id/questionButtons"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/question10Container"
+                android:visibility="gone">
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout10"
+                    android:layout_marginBottom="@dimen/dp_10">
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:text="Any other notes about this week?"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:id="@+id/notesInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/notesText"
+                    android:hint="Write any additional notes here. You can use more than one line."
+                    android:height="@dimen/dp_200"
+                    android:gravity="top" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionButtons">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:text="Skip"
+                        android:id="@+id/Skip"
+                        android:width="@dimen/dp_75"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Next"
+                        android:id="@+id/nextButton"
+                        android:width="@dimen/dp_75"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/summaryContainer"
+                android:visibility="visible">
+                <TextView
+                    android:text="EMPLOYER VERIFICATION REQUIRED"
+                    android:textSize="@dimen/dp_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employerWarning"
+                    android:textColor="#ffff3737"
+                    android:visibility="gone" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout11">
+                    <TextView
+                        android:textColor="#ff08298a"
+                        android:text="Summary"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:gravity="center" />
+                    <ImageView
+                        android:layout_margin="@dimen/dp_4"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/summaryInfo" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/summaryTableLayoutContainer"
+                    android:visibility="visible">
+                    <TableLayout
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/SummaryTable">
+                        <TableRow
+                            
+                            android:id="@+id/startDateTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Starting date:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView15" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/startDateSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/endingDateTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Ending date:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView15"
+                                tools:ignore="DuplicateIds" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/endDateSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/workHoursTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Work hours:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/workHoursSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/timeandaHalfHoursTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Time and a half:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/timeandaHalfSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/doubleTimeHoursTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Double Time:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/doubleTimeHoursSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/tafeHoursTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="TAFE hours:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/tafeHoursSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/sickLeaveHoursTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Sick Leave: "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/sickLeaveHoursSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/annualLeaveHoursTableRow"
+                            android:layout_width="@dimen/dp_140">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Annual Leave:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/annualLeaveHoursSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/bereavementLeaveHoursTableRow"
+                            android:layout_width="@dimen/dp_140">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Bereavement Leave:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/bereavementLeaveSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/vaccTimeHoursTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="VACC Time:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/textView18" />
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="(summary)"
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/vaccTimeSummaryText" />
+                        </TableRow>
+                        <TableRow
+                            
+                            android:id="@+id/notesTableRow">
+                            <TextView
+                                android:textColor="#ff000000"
+                                android:text="Additional notes:  "
+                                android:textSize="@dimen/dp_17"
+                                android:id="@+id/notesSummaryLabel"
+                                android:layout_column="0" />
+                        </TableRow>
+                    </TableLayout>
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:text="(summary)"
+                        android:textSize="@dimen/dp_17"
+                        android:id="@+id/notesSummaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employerApprovalContainer"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spaceBuffer" />
+                    <TextView
+                        android:textColor="#ff000000"
+                        android:text="Employer Approval Code:"
+                        android:textSize="@dimen/dp_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView14" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/employerCodeText"
+                        android:password="true" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spaceBuffer" />
+                <RelativeLayout
+                    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionButtons">
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Back"
+                        android:id="@+id/backButton"
+                        android:width="@dimen/dp_75"
+                        android:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10" />
+                    <Button
+                        android:textColor="#ff000000"
+                        android:text="Approve"
+                        android:id="@+id/sendButton"
+                        android:width="@dimen/dp_120"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

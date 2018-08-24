@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_timesheet"
+        icon="@drawable/timesheet"
+        title="Time Sheet" />
+    <tab
+        id="@+id/tab_profile"
+        icon="@drawable/profile"
+        title="Profile" />
+    <tab
+        id="@+id/tab_about"
+        icon="@drawable/about"
+        title="About" />
+</tabs>

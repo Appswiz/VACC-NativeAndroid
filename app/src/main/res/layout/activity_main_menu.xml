@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:src="@mipmap/ic_menu_top_logo" />
+
+    <LinearLayout
+        android:id="@+id/mainMenu_mainGridLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_30"
+        android:paddingRight="@dimen/dp_30">
+
+        <au.com.vacc.timesheets.views.CustomButton
+            android:id="@+id/btn_apprenticeship_program"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@mipmap/bg_menu_bg_apprenticeships"
+            android:clickable="true"
+            android:textSize="@dimen/dp_14"
+            android:text="AUTOMATIVE APPRENTICESHIPS PROGRAM" />
+
+        <au.com.vacc.timesheets.views.CustomButton
+            android:id="@+id/btn_automative_careers"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textSize="@dimen/dp_14"
+            android:background="@mipmap/bg_menu_bg_apply"
+            android:text="AUTOMATIVE CAREERS ON OFFER" />
+
+        <au.com.vacc.timesheets.views.CustomButton
+            android:id="@+id/btn_vet_in_school"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/dp_14"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@mipmap/bg_menu_bg_school"
+            android:text="VET IN SCHOOL" />
+
+        <au.com.vacc.timesheets.views.CustomButton
+            android:id="@+id/btn_about_vacc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textSize="@dimen/dp_14"
+            android:background="@mipmap/bg_menu_bg_about"
+            android:text="ABOUT THE VACC" />
+
+        <au.com.vacc.timesheets.views.CustomButton
+            android:id="@+id/btn_members"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:textSize="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@mipmap/bg_menu_bg_member"
+            android:text="MEMBERS" />
+    </LinearLayout>
+</LinearLayout>

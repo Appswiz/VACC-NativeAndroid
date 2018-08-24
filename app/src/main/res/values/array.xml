@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="about_vacc_array">
+        <item>About Us</item>
+        <item>History</item>
+        <item>Board of Management</item>
+        <item>Executive Board</item>
+        <item>Vision, Mission &amp; Goals</item>
+        <item>Corporate Social Responsibility</item>
+    </string-array>
+</resources>

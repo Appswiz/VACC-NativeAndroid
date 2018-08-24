@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="pressedSource">
+        <flag name="colorFilter" value="0" />
+        <flag name="resource" value="1" />
+    </attr>
+    <attr name="pressedStyle">
+        <flag name="dark" value="0" />
+        <flag name="light" value="1" />
+    </attr>
+    <declare-styleable name="CustomFont">
+        <attr name="fontName"/>
+    </declare-styleable>
+
+    <attr name="fontName" format="enum">
+        <enum name="RobotoRegular.ttf" value="1" />
+        <enum name="RobotoCondensedRegular.ttf" value="2" />
+        <enum name="RobotoBold.ttf" value="3" />
+        <enum name="RobotoCondensedBold.ttf" value="4" />
+        <enum name="SFProDisplayRegular.otf" value="5" />
+        <enum name="SFProDisplayBold.otf" value="6" />
+        <enum name="avenir.ttf" value="7" />
+        <enum name="helveticaneue.ttf" value="8" />
+    </attr>
+</resources>

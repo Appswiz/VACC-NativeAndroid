@@ -1,0 +1,403 @@
+<resources>
+    <string name="app_name">Timesheet App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="app_id">142117416251001</string>
+    <string name="google_drive_client_id">940066345682-ihdo9ag8g4hi1octcphqmgs2hnlksiu9.apps.googleusercontent.com</string>
+    <string name="xmlns_android">http://schemas.android.com/apk/res/android</string>
+    <string name="xmlns_auto">http://schemas.android.com/apk/res-auto</string>
+    <string name="error_general">An error has occurred.</string>
+    <string name="error_connection">Unable to connect with the server. Check your internet connection.</string>
+    <string name="error_connect_failed">Failed to connect to server.</string>
+    <string name="error_timeout">Connection timed out.</string>
+    <string name="error_location">Sorry but the location services are currently unavailable.</string>
+
+
+    <string name="about_about_section">
+		VACC is the voice of the Victorian automotive industry.\n
+		Victoria’s rapidly growing retail automotive industry, by 1918, saw 15,150 vehicles and 27,424 licensed drivers in the state.\n
+		It was during this turbulent time that two car-dealer brothers, Henry and Percy Rickards realised that larger international counterparts could force smaller, local companies out of the marketplace. The brothers called together a group of garage owners to meet at the Bendigo Chamber of Commerce rooms on 20 September 1918 and decided to register a new industry association: the Retail Motor Dealers’ Association of Victoria.\n
+		Present day issues such as industrial disputes and skilled labour shortages were occurring as far back as 1918. To rectify these complaints the association introduced a number of committees: the foundation of VACC’s current operation.
+		Soon there were calls to increase the scope of the association to cover allied trades and on 14 April 1920 the association was renamed the Victorian Automobile Chamber of Commerce (VACC).\n
+		VACC purchased real estate on St Kilda Road in 1956, becoming the first motor industry association in the southern hemisphere to own freehold property. On 4 September 1958, accompanied by an eight-page newspaper supplement and car cavalcade, Victorian Premier Henry Bolte officially opened VACC House.\n
+		Today VACC provides key business support services for over 5,000 members; deals with member, consumer and industry issues; develops and publishes automotive industry research; advocates on behalf of members to governments and other agencies; produces communications assisting members on various topics; and promotes automotive industry skills, training and careers. \n\n
+
+		About VACC members\n
+		Bolstered by the professional support services that VACC provides, VACC members are the experts in their field, employing more than 50,000 Victorians.\n
+		VACC member businesses keep Victoria moving by conducting key services in the automotive repair, service and retail sectors, such as:\n
+		• car, motorcycle, commercial vehicle and truck sales\n
+		• farm and industrial machinery sales\n
+		• mechanical servicing and repairs\n
+		• crash repairs\n
+		• dismantling and recycling\n
+		• accident towing \n
+		• fuel sales\n
+		• tyres sales and fitting\n
+		• automotive glass repairs and replacement\n
+		• radiator servicing and repairs\n
+		• engine reconditioning \n
+		• truck and commercial vehicle body making\n
+		• vehicle rentals\n
+	</string>
+
+    <string name="about_history_section">
+		Fuelled by the invasion of American vehicles into the Victorian market, mid 1918 saw a rapidly growing retail automotive industry, with 15,150 vehicles and 27,424 drivers licensedinVictoria.\n
+		It was during this turbulent time, at the end of the  rst world war, that two car dealers, Henry Rickards and his brother Percy, realised that smaller, local companies could be forced out of the market place by their larger American counterparts. The brothers called together a small number of garage owners to meet at the Bendigo Chamber of Commerce Rooms on 20 September 1918. In the discussions that followed it was decided an industry association was necessary, which was duly registered as the Retail Motor Dealers’ Association of Victoria.\n
+		Present day issues such as vandalism (especially to the stores of petrol traders), industrial disputes, and skilled labour shortages were cropping up as far back \n
+		as 1918. To rectify these complaints the association introduced a number of committees: the foundation of our current day operation. Soon there were calls to increase the scope of the association to cover allied trades and on 14 April 1920 the association was renamed the Victorian Automobile Chamber of Commerce (VACC).\n
+		In 1956, VACC purchased real estate on St Kilda Road, Melbourne, becoming the  rst motor industry association in the southern hemisphere to own freehold property. On 4 September 1958, accompanied by an eight-page newspaper supplement and car cavalcade, the Premier of Victoria Henry Bolte o cially opened VACC House.\n
+		Today, VACC continues to support its members, and the wider automotive industry, locally and through state-based Motor Trades Associations, including the national body, the Australian Motor Industry Association. As in its early days, VACC provides key services for members; deals with member, consumer and industry issues; campaigns and lobbies governments and other agencies; and promotes automotive industry skills, training and careers. VACC’s past is important but so too is the future. With credibility and relevancy, VACC looks forward to many more years as Victoria’s peak automotive industry body.\n
+	</string>
+
+    <string name="about_management_section">
+		The VACC Board of Management is the ultimate governing body of VACC. The Board meets quarterly to deal with organisational and industry issues. It has delegated the day-to-day responsibility of overseeing the Chamber to the VACC Executive Board.\n\n
+
+		Elections for the Board of Management and Executive Board are conducted every two years.\n\n
+
+		Members wanting a copy of the post-election report prepared by the Australian Electoral Commission should contact ldsilva@vacc.com.au. \n\n\n\n
+
+
+
+		Board of Management: \n\n\n
+
+		Automobile Repairers Division: \n\n
+
+		Mr Frank Grocl \n
+
+		J &amp; F Motors Pty Ltd \n
+
+		Mr Mark Awramenko Highton Automotive Services \n\n\n\n
+
+
+
+		Automotive Dismantlers &amp; Recyclers Division: \n\n
+
+		Mr Wayne Alway \n
+
+		Allford \n
+
+		Mr Gary McKendry \n
+
+		Gary Mac’s Autogroup \n
+
+		Board of Management \n\n\n\n
+
+
+
+		Automotive Electrical Division: \n\n
+
+		Mr Martin Sanchez \n
+
+		Lonsdale Street Auto Electrics \n\n\n\n
+
+
+
+
+		Body Repair Division: \n\n
+
+		Mr Morry Corvasce \n
+
+		LP Body Works Pty Ltd \n
+
+		Ms Carly Ruggeri \n
+
+		Europanels \n
+
+		Commercial Vehicle Body Manufacturers Association Vacant \n
+
+		Commercial Vehicle Industry Association (VIC) \n
+
+		Mr Allan Bartlett \n
+
+		Bartlett Transport Improvements \n
+
+		Mr Robert Parisi \n
+
+		City Bus &amp; Truck Centre \n
+
+		Engine Reconditioners’ Association of Australia \n
+
+		Mr Eddie Woods \n
+
+		Head Stud Developments \n
+
+		Mr Antony Pearse \n
+
+		Nason Engine Parts Pty Ltd \n
+
+		Farm and Industrial Machinery Dealers Association \n
+
+		Mr Paul Bertoli \n
+
+		Bertoli Farm Machinery \n
+
+		Mr Andrew Cleary \n
+
+		J B Scott Pty Ltd \n
+
+		Motorcycle Industry Division \n
+
+		Mr Donald Brown \n
+
+		Motorcycle Land Ballarat \n
+
+		Mr John Buskes A 1 Motorcycles \n\n\n\n
+
+
+
+
+		Radiator Service Division: \n\n
+
+		Mr Doug Burke \n
+
+		AAA Central Radiators Pty Ltd \n\n\n\n
+
+
+
+
+		Service Station and Convenience Store Division:  \n\n
+
+		Mr Fury Bortolotto \n
+
+		Diamond Creek Self Serve \n
+
+		Mr Des Brown \n
+
+		Des Browns Service Centre \n
+
+		Tasmanian Automobile Chamber of Commerce \n
+
+		Mr Michael Grubb \n
+
+		Specialist Auto Electrics Pty Ltd \n
+
+		Mr Larry Eaton \n
+
+		Motorworks Motorcycles \n\n\n\n
+
+
+
+
+		Towing Operators Division: \n\n
+
+		Mr Trevor Oliver \n
+
+		Bacchus Marsh Towing \n
+
+		Mr Frank D’Andrea \n
+
+		Geelong Towing Services \n
+
+		Used Car Traders Division \n
+
+		Mr Peter \n
+
+		Savige \n
+
+		Hilton Motor Company \n
+
+		Mr Sab Beyzade \n
+
+		Sabs Autos \n
+
+		Victorian Automobile Dealers Association \n
+
+		Mr Tony Sitch \n
+
+		Essendon Nissan \n
+
+		Miss Sharon Pask \n
+
+		Frankston Toyota \n
+
+		Victorian Tyre Dealers Association \n
+
+		Mr Terry Paget \n
+
+		BB Tyres &amp; Wheels \n
+
+		Mr Chris Hummer \n
+
+		Dynamic Wheel Co. Pty Ltd General Members \n
+
+		Vacant \n\n\n\n
+
+
+
+
+		VACC Past Presidents: \n\n
+
+		Mr Don Holstock AM \n
+
+		Mr Ian Barns \n
+
+		Mr Lindsay Heath \n
+
+		Mr Denis Dean \n
+
+		Mr Max Kirwan OAM \n
+
+		Mr Joe Shneider OAM \n
+
+		Mr Don Armstrong AM \n
+
+		Mr John Byford \n
+
+		Mr Russell Stuckey \n
+
+		Mr Tony Blake \n
+
+		Mr Perce Makin \n
+
+		Mr Graeme Hill \n
+
+		Mr John Buskes \n
+
+		Mr Peter Savige \n
+	</string>
+
+
+    <string name="about_executive_section">
+		The eight-member Executive Board comprises Board of Management (BoM) representatives elected by the BoM to serve on the Executive Board for two years. The Executive Board meets monthly to deal with organisational and industry issues and to provide general oversight of VACC’s operations. \n\n
+
+
+		The Executive Board is responsible for guiding VACC’s strategic and governance objectives. The Executive Board also has delegations from the Board of Management to carry out a range of functions that ensure the organisation is properly positioned to tackle key industry issues and meet member needs. \n\n\n\n
+
+
+
+		Executive Board Members \n\n\n
+
+
+		President \n\n
+
+
+		Mr Tony Sanchez \n
+		Automotive Electrical Division \n
+		ALS Automotive \n\n\n
+
+
+		Secretary \n\n
+
+		Mr Fury Bortolotto \n
+		Service Station and Convenience Store Division  \n
+		Diamond Creek Self Serve \n\n\n
+
+
+		Immediate Past President \n\n
+
+		Mr Peter Savige \n
+		Used Car Traders Division \n
+		Hilton Motor Company  \n\n
+
+		Mr John Buskes \n
+		Motorcycle Industry Division \n
+		A 1 Motorcycles \n\n
+
+		Mr Mark Awramenko  \n
+		Automobile Repairers Division \n
+		Highton Automotive Services \n\n
+
+		Mr Chris Hummer \n
+		Victorian Tyre Dealers Division \n
+		Dynamic Wheel Co. Pty Ltd \n\n
+
+		Mr Paul Bertoli \n
+		Farm and Industrial Machinery Dealers Association \n
+		Bertolis Agricultural &amp; Industrial \n
+
+		Mr Tony Sitch \n
+		Victorian Automobile Dealers Association \n
+		Essendon Nissan and KIA \n\n
+
+		Geo  Gwilym \n
+		VACC Executive Director (non voting member) \n
+	</string>
+
+
+    <string name="about_vision_section">
+		VACC Vision \n\n
+
+		A dynamic and in uential employer that protects the interests of its members through automotive industry advocacy, deliver of member support services and provision of competitive automotive industry services. \n\n
+
+		VACC Mission Statement \n\n
+
+		An employer association that advocates the interests of its members and delivers them support services, as well as building organisational wealth through wise investment and the provision of competitive industry support services in order to enhance the capacity of VACC to protect and promote the interests of its members.\n\n
+
+		VACC Goals are to:\n\n
+
+		• Be an e cient and e ective employer association capable of meeting the legitimate business needs of members.
+		\n\n
+		• Seek to raise its public pro le in order to e ectively promote members’ business interests with consumers, governments and regulators.
+		\n\n
+		• Be recognised as an independent and legitimate employer organisation voicing the interests of the motor industry.
+		\n\n
+		• Monitor industry trends and take appropriate actions in order to assist members respond to change.
+		\n\n
+		• Continuously seek to shape the future direction of the automotive industry.
+		\n\n
+		• Exploit relevant information technology and technical solutions for the bene t of the organisation and members.
+		\n\n
+		• Increasingly become a provider of national services to the retail automotive industry.
+		\n\n
+		• Enter into strategic alliances with diligently assessed partners that are able to assist the VACC achieve its goals.
+		\n\n
+		• Develop a skilled, informed, and customer focused workforce, attuned to the needs of members and comfortable with and accepting of change
+		Vision, Mission &amp; Goals
+		 \n\n
+		• Continue to reduce reliance on the Special Capital Fund (SCF).
+	</string>
+
+
+    <string name="about_responsibility_section">
+		VACC takes its corporate social responsibility seriously. In its 97 years of industry advocacy VACC has continually extended its association and member goals, to ensure bene ts have  owed into local communities.
+		\n\n
+		VACC and its 5000 members have supported schools, vocational training facilities, charities, sporting clubs and individuals in pursuing the building of local communities and assisting those who need help. Currently VACC is engaged in a range of social initiatives and local development that include:
+		\n\n
+		• Mentoring and stewardship of training for over 440 automotive apprentices including the provision of VACC-funded Life Skills training.
+		\n\n
+		• A VACC-funded national program to provide training equipment to schools, private vocational training institutions and TAFE colleges.
+		\n\n
+		• Annual  nancial support to Variety – the Children’s Charity.
+		\n\n
+		• Support for Camp Quality, creating better lives for children with cancer.
+		\n\n
+		VACC and its members provide this assistance proudly and in the knowledge that this work strengthens the resilience of our youth and our local communities.
+	</string>
+
+    <string name="vet_school_1">
+		“I love cars, motorcycles and trucks and want to start on my road to a career in the automotive industry.”
+		\n\n
+		“I really enjoy solving practical problems and using hand, electrical tools and computers.”
+		\n\n
+		“I haven’t tried automotive before and would like to give it a go. It’s good to know for when I have my licence and own vehicle.”
+	</string>
+
+    <string name="vet_school_1_credit">
+		VCE: you will be eligible for up to four units towards your VCE – two units at Units 1 and 2 level and a Unit 3 and 4 sequence. If you receive a Units 3 and 4 sequence, you will be eligible for an increment towards your ATAR (10% of the average of the primary four scaled studies).
+		\n\n
+		VCAL: you will be eligible for up to four credits towards your VCAL at foundation, intermediate or senior levels. Credits must be confirmed with your VET Coordinator prior to commencement.
+	</string>
+
+    <string name="vet_school_do_you">
+		Have an eye for detail and appreciate beauti- ful finishes on cars?
+		\n\n
+		Love watching TV programs like ‘Pimp My Ride’?
+		\n\n
+		Want to know if Paint &amp; Panel is a good fit for you before taking it on for real?
+		\n\n
+		With a pre-apprenticeship you will get to work in an automotive workshop and be a student with a TAFE Automotive centre. You will be mentored by VACC, an employer of choice for Automotive apprentices.
+		\n\n
+		If you decide you like it, you already have skills and experience when applying for your ap- prenticeship with VACC.
+	</string>
+
+    <string name="vet_school_benenfit">
+		This is a great opportunity to gain a nationally accredited qualification and credit toward your VCE or VCAL. Gain skills and knowledge that will benefit your progress toward an Automotive career.
+	</string>
+
+    <string name="permission">Permission</string>
+    <string name="permission_info">Permission is required to allow your app to function properly.</string>
+
+
+</resources>

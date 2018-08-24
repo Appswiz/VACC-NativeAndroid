@@ -1,0 +1,36 @@
+<resources>
+    <dimen name="dp_neg_5">-10dp</dimen>
+    <dimen name="dp_neg_10">-14dp</dimen>
+    <dimen name="dp_neg_20">-20dp</dimen>
+    <dimen name="dp_neg_30">-30dp</dimen>
+    <dimen name="dp_0">0dp</dimen>
+    <dimen name="dp_1">2dp</dimen>
+    <dimen name="dp_2">3dp</dimen>
+    <dimen name="dp_3">6dp</dimen>
+    <dimen name="dp_4">8dp</dimen>
+    <dimen name="dp_5">10dp</dimen>
+    <dimen name="dp_7">14dp</dimen>
+    <dimen name="dp_8">16dp</dimen>
+    <dimen name="dp_10">20dp</dimen>
+    <dimen name="dp_12">24dp</dimen>
+    <dimen name="dp_14">28dp</dimen>
+    <dimen name="dp_15">30dp</dimen>
+    <dimen name="dp_16">32dp</dimen>
+    <dimen name="dp_17">34dp</dimen>
+    <dimen name="dp_18">36dp</dimen>
+    <dimen name="dp_20">40dp</dimen>
+    <dimen name="dp_25">50dp</dimen>
+    <dimen name="dp_30">60dp</dimen>
+    <dimen name="dp_35">70dp</dimen>
+    <dimen name="dp_40">80dp</dimen>
+    <dimen name="dp_45">90dp</dimen>
+    <dimen name="dp_50">100dp</dimen>
+    <dimen name="dp_60">120dp</dimen>
+    <dimen name="dp_75">150dp</dimen>
+    <dimen name="dp_90">180dp</dimen>
+    <dimen name="dp_100">200dp</dimen>
+    <dimen name="dp_120">240dp</dimen>
+    <dimen name="dp_140">280dp</dimen>
+    <dimen name="dp_150">300dp</dimen>
+    <dimen name="dp_200">500dp</dimen>
+</resources>
