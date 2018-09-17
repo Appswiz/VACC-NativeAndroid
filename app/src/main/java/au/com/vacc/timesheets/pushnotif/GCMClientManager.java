@@ -21,7 +21,7 @@ public class GCMClientManager {
 	public final String PROPERTY_REG_ID = "registration_id";
 	private final String PROPERTY_APP_VERSION = "appVersion";
 	private final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-	private String GOOGLE_PROJECT_ID = "940066345682";
+	private String GOOGLE_PROJECT_ID = "970766083561";
 	// Member variables
 	private GoogleCloudMessaging gcm;
 	private String regid;

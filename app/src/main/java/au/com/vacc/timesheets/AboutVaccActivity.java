@@ -13,6 +13,8 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import fr.ganfra.materialspinner.MaterialSpinner;
+
 
 public class AboutVaccActivity extends AppCompatActivity {
 
@@ -20,7 +22,7 @@ public class AboutVaccActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_vacc);
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        MaterialSpinner spinner = (MaterialSpinner)findViewById(R.id.spinner);
         final TextView textView = (TextView) findViewById(R.id.textView);
         final ImageView responsibilityImage = (ImageView) findViewById(R.id.image_responsibility);
         final Button findButton = (Button) findViewById(R.id.find_button);
@@ -35,7 +37,7 @@ public class AboutVaccActivity extends AppCompatActivity {
         });
         String[] options = getResources().getStringArray(R.array.about_vacc_array);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                R.layout.item_spinner, options);
+                android.R.layout.simple_spinner_item, options);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

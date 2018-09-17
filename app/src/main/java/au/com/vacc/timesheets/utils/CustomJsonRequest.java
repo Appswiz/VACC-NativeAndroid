@@ -1,16 +1,12 @@
 package au.com.vacc.timesheets.utils;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ConnectTimeoutException;
@@ -19,9 +15,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
-import org.codehaus.jackson.JsonNode;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.SocketException;
@@ -49,7 +45,7 @@ public class CustomJsonRequest extends AsyncTask<String, Void, String> {
         this.callBack = callBack;
         this.showDialog = showDialog;
         this.method = method;
-        if(showDialog) {
+        if (showDialog) {
             CustomProgressDialog.showProgressDialog(context);
         }
     }
@@ -78,26 +74,41 @@ public class CustomJsonRequest extends AsyncTask<String, Void, String> {
             Log.v("sak", content);
             if (method == POST) {
                 HttpPost httpPost = new HttpPost(new String(url.getBytes("UTF-8"), "UTF-8"));
-                 StringEntity postingString = new StringEntity(content, "UTF8");
-                 httpPost.setEntity(postingString);
-                 httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+                StringEntity postingString = new StringEntity(content, "UTF8");
+                httpPost.setEntity(postingString);
+                httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 httpResponse = httpClient.execute(httpPost);
             } else if (method == GET) {
 
                 HttpGet httpGet = new HttpGet(url + content);
-                httpResponse= httpClient.execute(httpGet);
+                httpResponse = httpClient.execute(httpGet);
 
             }
             int statusCode = httpResponse.getStatusLine().getStatusCode();
             httpEntity = httpResponse.getEntity();
-            if(statusCode != 200) {
-                error = "false";
-            }
             response = EntityUtils.toString(httpEntity);
+            if (statusCode != 200) {
+                if (url.toUpperCase().contains("POSTTIMESHEET")) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONObject modelStateObj = jsonObject.getJSONObject("ModelState");
+                        JSONArray st = modelStateObj.getJSONArray("Timesheet");
+                        for (int i = 0; i < st.length(); i++) {
+                            error  = st.getString(i);
+                        }
+                    } catch (Exception e) {
+                        error = e.getMessage();
+                        e.printStackTrace();
+                    }
+                } else {
+                    error = "false";
+                }
+            }
+
             Log.v("sak", statusCode + " " + response);
         } catch (UnsupportedEncodingException e) {
             error = e.getMessage();
-                    e.printStackTrace();
+            e.printStackTrace();
         } catch (ClientProtocolException e) {
             error = e.getMessage();
             e.printStackTrace();
@@ -118,7 +129,7 @@ public class CustomJsonRequest extends AsyncTask<String, Void, String> {
             e.printStackTrace();
         }
 
-        if(error == null) {
+        if (error == null) {
             error = exceptionError;
         }
 
@@ -128,8 +139,8 @@ public class CustomJsonRequest extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        if(showDialog) {
-           CustomProgressDialog.dismissProgressDialog();
+        if (showDialog) {
+            CustomProgressDialog.dismissProgressDialog();
         }
         if (error != null) {
             callBack.onError(error);

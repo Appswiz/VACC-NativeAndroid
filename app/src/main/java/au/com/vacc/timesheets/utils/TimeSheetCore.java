@@ -82,9 +82,9 @@ public class TimeSheetCore {
         sb.append("\n");
         sb.append("** Hours **");
         sb.append("\n");
-        sb.append(String.format("Work: %s\n", timeSheetData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("Total Time and a Half: %s\n", timeSheetData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("Total BigDecimal Time: %s\n", timeSheetData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Work: %s\n", timeSheetData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("Total Time and a Half: %s\n", timeSheetData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("Total BigDecimal Time: %s\n", timeSheetData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
         sb.append("\n");
         sb.append("* Overtime *");
         sb.append("\n");
@@ -94,11 +94,11 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
 
-        sb.append(String.format("Total Overtime: %s\n", timeSheetData.getTotalOvertimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Overtime: %s\n", timeSheetData.getTotalOvertimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -110,10 +110,10 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total Sick Leave: %s\n", timeSheetData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Sick Leave: %s\n", timeSheetData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -125,10 +125,10 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total Annual Leave: %s\n", timeSheetData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Annual Leave: %s\n", timeSheetData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -140,10 +140,10 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total Bereavement Leave: %s\n", timeSheetData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Bereavement Leave: %s\n", timeSheetData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -155,15 +155,15 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(": %s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total VACC Time: %s\n", timeSheetData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total VACC Time: %s\n", timeSheetData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
 
         sb.append("\n");
 
-        sb.append(String.format("RTO / TAFE: %s\n",timeSheetData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("RTO / TAFE: %s\n",timeSheetData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
         sb.append(String.format("Notes:\n%s\n", (TextUtils.isEmpty(timeSheetData.getNotes())) ? " no notes " : timeSheetData.getNotes()));
         sb.append("\n");
         sb.append(String.format("Employer Approval Code: %s\n", EncodeEmployerApprovalString()));
@@ -201,9 +201,9 @@ public class TimeSheetCore {
         sb.append("\n");
         sb.append("** Hours **");
         sb.append("\n");
-        sb.append(String.format("Work:,%s\n", timeSheetData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("Total Time and a Half:,%s\n", timeSheetData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("Total BigDecimal Time:,%s\n", timeSheetData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Work:,%s\n", timeSheetData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("Total Time and a Half:,%s\n", timeSheetData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("Total BigDecimal Time:,%s\n", timeSheetData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
         sb.append("\n");
         sb.append("* Overtime *");
         sb.append("\n");
@@ -213,11 +213,11 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
 
-        sb.append(String.format("Total Overtime:,%s\n", timeSheetData.getTotalOvertimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Overtime:,%s\n", timeSheetData.getTotalOvertimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -229,10 +229,10 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total Sick Leave:,%s\n", timeSheetData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Sick Leave:,%s\n", timeSheetData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -244,10 +244,10 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total Annual Leave:,%s\n", timeSheetData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Annual Leave:,%s\n", timeSheetData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -259,10 +259,10 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total Bereavement Leave:,%s\n", timeSheetData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total Bereavement Leave:,%s\n", timeSheetData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("\n");
 
@@ -274,15 +274,15 @@ public class TimeSheetCore {
             BigDecimal val = new BigDecimal(itemArr[1]);
             if(val.compareTo(BigDecimal.ZERO) > 0) {
                 sb.append(itemArr[0]);
-                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+                sb.append(String.format(":,%s\n", val.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
             }
         }
-        sb.append(String.format("Total VACC Time:,%s\n", timeSheetData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("Total VACC Time:,%s\n", timeSheetData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
 
         sb.append("\n");
 
-        sb.append(String.format("RTO / TAFE:,%s\n",timeSheetData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("RTO / TAFE:,%s\n",timeSheetData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
         sb.append(String.format("Notes:\n%s\n", (TextUtils.isEmpty(timeSheetData.getNotes())) ? " no notes " : timeSheetData.getNotes()));
         sb.append("\n");
         sb.append(String.format("Employer Approval Code:,%s\n", EncodeEmployerApprovalString()));
@@ -306,9 +306,9 @@ public class TimeSheetCore {
         sb.append(String.format("Parking=%s&", profileData.isParkingAllowance()));
         sb.append(String.format("Week=%s&", formatDate.format(timeSheetData.getStartDate().getTime())));
         sb.append(String.format("ApprovalCode=%s&", timeSheetData.getEmployerCode()));
-        sb.append(String.format("NormalHours=%s&", timeSheetData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("HalfHours=%s&",timeSheetData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("DoubleHours=%s&", timeSheetData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("NormalHours=%s&", timeSheetData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("HalfHours=%s&",timeSheetData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("DoubleHours=%s&", timeSheetData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
         boolean startedDayBuilder = false;
 
         //OVERTIME
@@ -331,8 +331,8 @@ public class TimeSheetCore {
         }
         startedDayBuilder = false;
 
-        sb.append(String.format("&Vacc=%s&", timeSheetData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
-        sb.append(String.format("Tafe=%s&", timeSheetData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("&Vacc=%s&", timeSheetData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
+        sb.append(String.format("Tafe=%s&", timeSheetData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append("SickDays=");
         for(int i = 0; i < timeSheetData.getSickLeaveHours().size(); i++) {
@@ -343,7 +343,7 @@ public class TimeSheetCore {
         }
         startedDayBuilder = false;
 
-        sb.append(String.format("&Sick=%s&", timeSheetData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("&Sick=%s&", timeSheetData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         //ANNUAL LEAVE
         sb.append("LeaveDays=");
@@ -355,7 +355,7 @@ public class TimeSheetCore {
             startedDayBuilder = true;
         }
         startedDayBuilder = false;
-        sb.append(String.format("&Leave=%s&", timeSheetData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("&Leave=%s&", timeSheetData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         //BEREAVEMENT LEAVE
         sb.append("BereavementDays=");
@@ -366,7 +366,7 @@ public class TimeSheetCore {
             startedDayBuilder = true;
         }
         startedDayBuilder = false;
-        sb.append(String.format("&Bereavement=%s&", timeSheetData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString()));
+        sb.append(String.format("&Bereavement=%s&", timeSheetData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString()));
 
         sb.append(String.format("Notes=%s", (TextUtils.isEmpty(timeSheetData.getNotes())) ? "" : timeSheetData.getNotes()));
 
@@ -381,7 +381,7 @@ public class TimeSheetCore {
         }
         if (value.compareTo(BigDecimal.ZERO) > 0)
         {
-            sb.append(value.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
+            sb.append(value.setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
         }
         return sb;
     }

@@ -104,13 +104,14 @@
                 android:src="@mipmap/vet_bottom_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button
+            <au.com.vacc.timesheets.views.CustomAspectRatioImageView
                 android:id="@+id/call_button"
-                android:background="@mipmap/vet_cal"
+                android:src="@mipmap/vet_cal"
+                android:adjustViewBounds="true"
                 android:layout_margin="@dimen/dp_20"
                 android:layout_centerVertical="true"
                 android:layout_width="@dimen/dp_100"
-                android:layout_height="@dimen/dp_40"  />
+                android:layout_height="wrap_content"  />
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>

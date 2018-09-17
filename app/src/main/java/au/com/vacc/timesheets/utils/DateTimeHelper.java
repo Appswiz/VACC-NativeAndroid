@@ -21,6 +21,7 @@ public class DateTimeHelper {
         totalHours = totalHours.add(daysTimesHoursPerDay);
         //note: we do NOT round anything here, as it is used elsewhere for calculations.
         // only round on UI if need be
+        Log.v("sak", totalHours + " -- totalHours");
         return totalHours;
     }
 
@@ -30,9 +31,9 @@ public class DateTimeHelper {
         final BigDecimal hoursPerDay = new BigDecimal("7.6");
         BigDecimal totalDays = new BigDecimal("0");
 
-        BigDecimal minutesBy60 = minutes.divide(new BigDecimal("60"), 4, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
+        BigDecimal minutesBy60 = minutes.divide(new BigDecimal("60"), 4, BigDecimal.ROUND_HALF_EVEN);
         BigDecimal hoursPlusMinutesBy60 = hours.add(minutesBy60);
-        BigDecimal tempTotal = hoursPlusMinutesBy60.divide(hoursPerDay, 4, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
+        BigDecimal tempTotal = hoursPlusMinutesBy60.divide(hoursPerDay, 4, BigDecimal.ROUND_HALF_EVEN);
         totalDays = totalDays.add(tempTotal);
 
         //note: we do NOT round anything here, as it is used elsewhere for calculations.
@@ -45,7 +46,7 @@ public class DateTimeHelper {
     {
         final BigDecimal hoursPerDay = new BigDecimal("7.6");
         BigDecimal hours= days.multiply(hoursPerDay);
-        BigDecimal truncatehours = hours.setScale(0, BigDecimal.ROUND_DOWN).stripTrailingZeros();
+        BigDecimal truncatehours = hours.setScale(0, BigDecimal.ROUND_DOWN);
         BigDecimal minutes = truncatehours.subtract(hours);
         BigDecimal minutesBy60 = minutes.multiply(new BigDecimal("60")).abs();
         return truncatehours.toString() + "---" + minutesBy60.toString();
@@ -53,7 +54,7 @@ public class DateTimeHelper {
 
     public static BigDecimal GetHoursFromHoursMinutes(BigDecimal hours, BigDecimal minutes)
     {
-        BigDecimal minutesBy60 = minutes.divide(new BigDecimal("60"), 4, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
+        BigDecimal minutesBy60 = minutes.divide(new BigDecimal("60"), 4, BigDecimal.ROUND_HALF_EVEN);
         BigDecimal hoursPlusMinutesBy60 = hours.add(minutesBy60);
         return hoursPlusMinutesBy60;
     }

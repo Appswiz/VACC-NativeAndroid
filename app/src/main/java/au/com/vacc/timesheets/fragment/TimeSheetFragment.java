@@ -1241,18 +1241,18 @@ public class TimeSheetFragment extends Fragment {
         CustomJsonRequest jsonRequest = new CustomJsonRequest(act, "https://vacc.appswiz.com/api/reports/PostTimesheet", postBody, true, new CustomJsonCallBack() {
             @Override
             public void onError(String error) {
-                showResponseDialog(0);
+                showResponseDialog(0, error);
             }
 
             @Override
             public void getResult(String jsonNode) {
-                showResponseDialog(1);
+                showResponseDialog(1, "");
             }
         }, CustomJsonRequest.POST);
         jsonRequest.execute();
     }
 
-    private void showResponseDialog(int status)
+    private void showResponseDialog(int status, String message)
     {
         AlertDialog.Builder dialog = new AlertDialog.Builder(act);
         if (status == 1)
@@ -1270,8 +1270,8 @@ public class TimeSheetFragment extends Fragment {
         }
         else
         {
-            dialog.setTitle("Timesheet not sent");
-            dialog.setMessage("Please check your payroll number and employer code and try again.");
+            dialog.setTitle("Timesheet");
+            dialog.setMessage(message);
             dialog.setPositiveButton("Close", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -1432,16 +1432,16 @@ public class TimeSheetFragment extends Fragment {
     {
         String hours = "0";
         if(tsData.getTotalLoggedHours().compareTo(BigDecimal.ZERO) != 0) {
-            hours = tsData.getTotalLoggedHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString();
+            hours = tsData.getTotalLoggedHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString();
         }
         hoursRemainingText.setText((hours + " of " + String.valueOf(TimeSheetCore.HoursTarget)));
         if(tsData.getTimeAndAHalfHours().compareTo(BigDecimal.ZERO) > 0) {
             String txt = hoursRemainingText.getText().toString() ;
-            hoursRemainingText.setText(txt += "  (" + tsData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros() + " Time and a Half)");
+            hoursRemainingText.setText(txt += "  (" + tsData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN) + " Time and a Half)");
         }
         if(tsData.getDoubleTimeHours().compareTo(BigDecimal.ZERO) > 0) {
             String txt = hoursRemainingText.getText().toString() ;
-            hoursRemainingText.setText(txt += "  (" + tsData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros() + " Double Time)");
+            hoursRemainingText.setText(txt += "  (" + tsData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN) + " Double Time)");
 
         }
 
@@ -1477,18 +1477,18 @@ public class TimeSheetFragment extends Fragment {
         }
         else //else we have work hours logged, so lets display them and update the double time / time and a half hours (overtime)
         {
-            ((TextView) view.findViewById (R.id.workHoursSummaryText)).setText(tsData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
+            ((TextView) view.findViewById (R.id.workHoursSummaryText)).setText(tsData.getWorkHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
             ((TableRow) view.findViewById (R.id.workHoursTableRow)).setVisibility(View.VISIBLE);
 
-            UpdateSummaryField ((TextView) view.findViewById (R.id.doubleTimeHoursSummaryText), (TableRow) view.findViewById (R.id.doubleTimeHoursTableRow), tsData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
-            UpdateSummaryField ((TextView) view.findViewById (R.id.timeandaHalfSummaryText), (TableRow) view.findViewById (R.id.timeandaHalfHoursTableRow), tsData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
+            UpdateSummaryField ((TextView) view.findViewById (R.id.doubleTimeHoursSummaryText), (TableRow) view.findViewById (R.id.doubleTimeHoursTableRow), tsData.getDoubleTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
+            UpdateSummaryField ((TextView) view.findViewById (R.id.timeandaHalfSummaryText), (TableRow) view.findViewById (R.id.timeandaHalfHoursTableRow), tsData.getTimeAndAHalfHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
         }
 
-        UpdateSummaryField ((TextView) view.findViewById (R.id.tafeHoursSummaryText), (TableRow) view.findViewById (R.id.tafeHoursTableRow), tsData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
-        UpdateSummaryField ((TextView) view.findViewById (R.id.sickLeaveHoursSummaryText), (TableRow) view.findViewById (R.id.sickLeaveHoursTableRow), tsData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
-        UpdateSummaryField ((TextView) view.findViewById (R.id.annualLeaveHoursSummaryText), (TableRow) view.findViewById (R.id.annualLeaveHoursTableRow), tsData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
-        UpdateSummaryField ((TextView) view.findViewById (R.id.bereavementLeaveSummaryText), (TableRow) view.findViewById (R.id.bereavementLeaveHoursTableRow),tsData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
-        UpdateSummaryField ((TextView) view.findViewById (R.id.vaccTimeSummaryText), (TableRow) view.findViewById (R.id.vaccTimeHoursTableRow), tsData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros().toString());
+        UpdateSummaryField ((TextView) view.findViewById (R.id.tafeHoursSummaryText), (TableRow) view.findViewById (R.id.tafeHoursTableRow), tsData.getTAFEHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
+        UpdateSummaryField ((TextView) view.findViewById (R.id.sickLeaveHoursSummaryText), (TableRow) view.findViewById (R.id.sickLeaveHoursTableRow), tsData.getTotalSickLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
+        UpdateSummaryField ((TextView) view.findViewById (R.id.annualLeaveHoursSummaryText), (TableRow) view.findViewById (R.id.annualLeaveHoursTableRow), tsData.getTotalAnnualLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
+        UpdateSummaryField ((TextView) view.findViewById (R.id.bereavementLeaveSummaryText), (TableRow) view.findViewById (R.id.bereavementLeaveHoursTableRow),tsData.getTotalBereavementLeaveHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
+        UpdateSummaryField ((TextView) view.findViewById (R.id.vaccTimeSummaryText), (TableRow) view.findViewById (R.id.vaccTimeHoursTableRow), tsData.getTotalVACCTimeHours().setScale(2, BigDecimal.ROUND_HALF_EVEN).toString());
 
         UpdateSummaryField (notesSummaryText, (TableRow) view.findViewById (R.id.notesTableRow), tsData.getNotes());
 
@@ -1659,8 +1659,10 @@ public class TimeSheetFragment extends Fragment {
         if(!TextUtils.isEmpty(workDaysText.getText().toString()))
         {
             String[] hoursMinutes = DateTimeHelper.GetHoursMinutesFromDays(days).split("---");
-            hours = new BigDecimal(hoursMinutes[0]).setScale(0, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
-            minutes = new BigDecimal(hoursMinutes[1]).setScale(0, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
+            hours = new BigDecimal(hoursMinutes[0]).setScale(0, BigDecimal.ROUND_HALF_EVEN);
+            minutes = new BigDecimal(hoursMinutes[1]).setScale(0, BigDecimal.ROUND_HALF_EVEN);
+            Log.v("sak", hours + " " + new BigDecimal(hoursMinutes[0]).setScale(0, BigDecimal.ROUND_HALF_EVEN).toString());
+            Log.v("sak", minutes + " " + new BigDecimal(hoursMinutes[1]).setScale(0, BigDecimal.ROUND_HALF_EVEN).toString());
             workHoursText.setHint(hours.toString());
             workMinutesText.setHint(minutes.toString());
             workHoursText.setText(null);
@@ -1738,8 +1740,8 @@ public class TimeSheetFragment extends Fragment {
         if(!TextUtils.isEmpty(tafeDaysText.getText().toString()))
         {
             String[] hoursMinutes = DateTimeHelper.GetHoursMinutesFromDays(days).split("---");
-            hours = new BigDecimal(hoursMinutes[0]).setScale(0, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
-            minutes = new BigDecimal(hoursMinutes[1]).setScale(0, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
+            hours = new BigDecimal(hoursMinutes[0]).setScale(0, BigDecimal.ROUND_HALF_EVEN);
+            minutes = new BigDecimal(hoursMinutes[1]).setScale(0, BigDecimal.ROUND_HALF_EVEN);
             tafeHoursText.setHint(hours.toString());
             tafeMinutesText.setHint(minutes.toString());
             tafeHoursText.setText(null);

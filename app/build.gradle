@@ -46,4 +46,5 @@ dependencies {
     implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.7'
     implementation 'me.relex:circleindicator:1.2.2@aar'
     implementation 'com.roughike:bottom-bar:2.3.1'
+    implementation 'com.github.ganfra:material-spinner:2.0.0'
 }
